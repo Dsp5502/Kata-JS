@@ -202,3 +202,80 @@ calcularPrecio(helado.toLowerCase().trim());
 //   *  Master: 12 meses
 
 let curso = prompt('¿Qué curso desea?');
+let beca = prompt('¿Cuenta con alguna beca?');
+
+let cursoResult = document.getElementById('curso');
+
+const cursos = {
+  course: {
+    precio: 4999,
+    duracion: 2,
+  },
+  carrera: {
+    precio: 3999,
+    duracion: 6,
+  },
+  master: {
+    precio: 2999,
+    duracion: 12,
+  },
+};
+
+const becas = {
+  facebook: 0.2,
+  google: 0.15,
+  jesua: 0.5,
+};
+
+const precioFinal = (mensaje) => {
+  alert(mensaje);
+  cursoResult.innerHTML = mensaje;
+};
+
+const calcularPrecioFinal = (curso, beca) => {
+  if (cursos[curso] && becas[beca]) {
+    let precio = cursos[curso].precio;
+    let duracion = cursos[curso].duracion;
+    let precioTotal = precio * duracion;
+    let precioDescuento = precioTotal - precioTotal * becas[beca];
+
+    precioFinal(
+      `El precio mensual con descuento es de ${precioDescuento} MXN y el precio total es de ${precioTotal} MXN`
+    );
+  }
+};
+
+calcularPrecioFinal(curso.toLowerCase().trim(), beca.toLowerCase().trim());
+
+// * 11. Realizar un programa que ayude a calcular el total a pagar de acuerdo a la distancia recorrida por un vehículo con cargo extra por los litros consumidos, tomando en consideración lo siguiente:
+// * Si el vehículo es “coche”, el precio kilometro ha de ser 0.20, si es “moto” ha de ser 0.10 y si es “autobús” 0.5.
+// * Si los litros consumidos están entre 0 y 100 se ha de añadir 5 al costo total, si es mayor la cantidad de litros consumidos se ha de añadir 10 al total. Considere qué:
+// * total a pagar = (precio kilometro x kms recorridos) + extra por litros consumidos.
+
+let vehiculo = prompt('¿Qué vehículo es?');
+let distancia = parseFloat(prompt('¿Cuántos kilómetros recorrió?'));
+let litros = parseFloat(prompt('¿Cuántos litros consumió?'));
+
+let vehiculoResult = document.getElementById('vehiculo');
+
+const vehiculos = {
+  coche: 0.2,
+  moto: 0.1,
+  autobus: 0.5,
+};
+
+const mostrarPrecioTotal = (mensaje) => {
+  alert(mensaje);
+  vehiculoResult.innerHTML = mensaje;
+};
+
+const calcularPrecioTotal = (vehiculo, distancia, litros) => {
+  if (vehiculos[vehiculo]) {
+    let precioKilometro = vehiculos[vehiculo];
+    let precioTotal = precioKilometro * distancia + (litros > 100 ? 10 : 5);
+    debugger;
+    mostrarPrecioTotal(`El precio total a pagar es de ${precioTotal} MXN`);
+  }
+};
+
+calcularPrecioTotal(vehiculo.toLowerCase().trim(), distancia, litros);
