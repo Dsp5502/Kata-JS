@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cajero Automatico</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <h1>Simulador de Cajero Automático</h1>
+
+  <div id="cliente-lista">
+    <h2>Lista de clientes</h2>
+    <select id="clientes">
+
+    </select>
+  </div>
+
+  <div id="operaciones">
+    <h2>Operaciones</h2>
+    <button id="consulta">Consultar Saldo</button>
+    <br>
+    <input type="number" id="monto" placeholder="Monto">
+    <button id="ingresar">Ingresar Monto</button>
+    <button id="retirar">Retirar Monto</button>
+  </div>
+
+  <div id="resultado">
+    <h2>Transacción</h2>
+    <h3 id="nombre"></h3>
+    <p id="saldo"></p>
+    <script src="./script.js"></script>
+</body>
+
+</html>
