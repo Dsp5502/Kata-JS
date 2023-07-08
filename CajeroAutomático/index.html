@@ -10,13 +10,23 @@
 
 <body>
   <h1>Simulador de Cajero Automático</h1>
+  <dialog id="modal">
+    <p id="msg"></p>
+    <form method="dialog">
+      <button class="btn-modal">
+        Ok
+      </button>
+    </form>
+  </dialog>
 
   <div id="cliente-lista">
     <h2>Lista de clientes</h2>
     <select id="clientes">
-
     </select>
+    <input type="password" id="password" name="password" placeholder="Ingrese su contraseña">
+    <button id="login">Ingresar</button>
   </div>
+
 
   <div id="operaciones">
     <h2>Operaciones</h2>
